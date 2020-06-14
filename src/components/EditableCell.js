@@ -24,7 +24,7 @@ function EditableCell(props) {
     };
 
     return (
-        <td className="mw-160px" onDoubleClick={() => setEditMode(true)}>{!isEditMode ? props.data : showEditMode()}</td>
+        <td className="mw-120px" onDoubleClick={() => setEditMode(true)}>{!isEditMode ? props.data : showEditMode()}</td>
     );
 };
 
