@@ -28,7 +28,7 @@ export const getSortedBy = (key, users, asc) => {
             case 'catch phrase':
                 return a.company.catchPhrase < b.company.catchPhrase ? (asc ? -1 : 1) : (asc ? 1 : -1);
             case 'bs':
-                return a.company.bs < b.website.bs ? (asc ? -1 : 1) : (asc ? 1 : -1);
+                return a.company.bs < b.company.bs ? (asc ? -1 : 1) : (asc ? 1 : -1);
             default:
                 return 0;
         }
