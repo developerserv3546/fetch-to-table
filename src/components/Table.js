@@ -2,29 +2,31 @@ import React from "react";
 import AddUser from "./AddUser";
 import EditableCell from "./EditableCell";
 import {cellKey} from '../utils/Constant';
+import TableHeadCell from "./TableHeadCell";
 
 function Table(props) {
+
     return (
         <table className="table table-hover">
             <thead className="thead-dark">
             <tr>
-                <th scope="col" rowSpan="2" className="text-center align-middle">#</th>
-                <th scope="col" rowSpan="2" className="text-center align-middle">Name</th>
-                <th scope="col" rowSpan="2" className="text-center align-middle">Username</th>
-                <th scope="col" rowSpan="2" className="text-center align-middle">Email</th>
-                <th scope="col" rowSpan="1" colSpan="4" className="text-center align-middle">Address</th>
-                <th scope="col" rowSpan="2" className="text-center align-middle">Phone</th>
-                <th scope="col" rowSpan="2" className="text-center align-middle">Website</th>
-                <th scope="col" rowSpan="1" colSpan="3" className="text-center align-middle">Company</th>
+                <TableHeadCell text={'#'} sortBy={props.sortBy}/>
+                <TableHeadCell text={'Name'} sortBy={props.sortBy}/>
+                <TableHeadCell text={'Username'} sortBy={props.sortBy}/>
+                <TableHeadCell text={'Email'} sortBy={props.sortBy}/>
+                <TableHeadCell text={'Address'} sortBy={props.sortBy}/>
+                <TableHeadCell text={'Phone'} sortBy={props.sortBy}/>
+                <TableHeadCell text={'Website'} sortBy={props.sortBy}/>
+                <TableHeadCell text={'Company'} sortBy={props.sortBy}/>
             </tr>
             <tr>
-                <th className="text-center align-middle">Street</th>
-                <th className="text-center align-middle">Suit</th>
-                <th className="text-center align-middle">City</th>
-                <th className="text-center align-middle">Zipcode</th>
-                <th className="text-center align-middle">Name</th>
-                <th className="text-center align-middle">Catch Phrase</th>
-                <th className="text-center align-middle">BS</th>
+                <TableHeadCell text={'Street'} sortBy={props.sortBy}/>
+                <TableHeadCell text={'Suite'} sortBy={props.sortBy}/>
+                <TableHeadCell text={'City'} sortBy={props.sortBy}/>
+                <TableHeadCell text={'Zipcode'} sortBy={props.sortBy}/>
+                <TableHeadCell text={'Name '} sortBy={props.sortBy}/>
+                <TableHeadCell text={'Catch Phrase'} sortBy={props.sortBy}/>
+                <TableHeadCell text={'BS'} sortBy={props.sortBy}/>
             </tr>
             </thead>
             <tbody>

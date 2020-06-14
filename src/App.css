@@ -1,6 +1,13 @@
 .mw-200px {
     min-width: 200px;
 }
+.mw-160px {
+    min-width: 160px;
+}
+
+.mw-80px {
+    min-width: 80px;
+}
 
 .no-hover {
     background-color: white !important;

@@ -3,6 +3,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Table from "./components/Table";
 import {setUserValueByKey} from './utils/UserUtil'
+import {getSortedBy} from "./utils/TableUtil";
 
 function App() {
 
@@ -37,10 +38,15 @@ function App() {
         setAddUserMode(false);
     };
 
+    const sortBy = (key, asc) =>{
+        const sortedUsers = getSortedBy(key, users, asc);
+        setUsers(sortedUsers);
+    };
+
 
     return (
         <div className="container-fluid p-0">
-            <div className="text-center align-middle">
+            <div className="text-center align-middle my-2">
                 <button className="btn btn-dark m-1"
                         onClick={() => loadUsers()}>{!isLoaded ? 'Load' : 'Reload'}</button>
                 <button className="btn btn-dark m-1" onClick={() => setAddUserMode(true)} hidden={isAddUserMode}
@@ -48,12 +54,15 @@ function App() {
                 </button>
             </div>
             <div>
-                <Table
-                    users={users}
-                    isAddUserMode={isAddUserMode}
-                    addUser={addUser}
-                    editUser={editUser}
-                    setAddUserMode={setAddUserMode}/>
+                { isLoaded &&
+                    <Table
+                        users={users}
+                        isAddUserMode={isAddUserMode}
+                        addUser={addUser}
+                        editUser={editUser}
+                        setAddUserMode={setAddUserMode}
+                        sortBy={sortBy}/>
+                }
             </div>
         </div>
     );
