@@ -1,4 +1,4 @@
-import React, {useEffect, useState} from 'react';
+import React, {useState} from 'react';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import './App.css';
 import Table from "./components/Table";
@@ -91,7 +91,7 @@ function App() {
                     setAddUserMode={setAddUserMode}
                     sortBy={sortBy}/>
                 }
-                <div className="text-center" hidden={isHiddenLoadMore}>
+                <div className="text-center mb-4" hidden={isHiddenLoadMore}>
                     <div className="spinner-border" role="status">
                         <span className="sr-only"/>
                     </div>
